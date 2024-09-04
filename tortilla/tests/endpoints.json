@@ -1,0 +1,63 @@
+{
+  "endpoints": {
+    "/config": {
+      "body": {"param": "value"}
+    },
+    "/test": {
+      "body": {"message": "Regular endpoint."}
+    },
+    "/nojson": {
+      "body": "This is not a JSON response."
+    },
+    "/user/jimmy": {
+      "body": {"age": 10, "name": "Jimmy", "interest": "Computer games"}
+    },
+    "/user/имя": {
+      "body": {"age": 9, "name": "имя", "interest": "Vodka"}
+    },
+    "/post_endpoint": {
+      "method": "POST",
+      "body": {"message": "Success!"}
+    },
+    "/put_endpoint": {
+      "method": "PUT",
+      "body": {"message": "Success!"}
+    },
+    "/patch_endpoint": {
+      "method": "PATCH",
+      "body": {"message": "Success!"}
+    },
+    "/delete_endpoint": {
+      "method": "DELETE",
+      "body": {"message": "Success!"}
+    },
+    "/has_self": {
+      "method": "GET",
+      "body": {"self": "me"}
+    },
+    "/head_endpoint": {
+      "method": "HEAD",
+      "body": ""
+    },
+    "/status_404": {
+      "status": 404,
+      "body": ""
+    },
+    "/status_500": {
+      "status": 500,
+      "body": ""
+    },
+    "/extension/hello.json": {
+      "body": {"message": "Success!"}
+    },
+    "/hyphenated-endpoint": {
+      "body": {"message": "Success!"}
+    },
+    "/mixedCasedEndpoint": {
+      "body": {"message": "Success!"}
+    },
+    "/CamelCasedEndpoint": {
+      "body": {"message": "Success!"}
+    }
+  }
+}

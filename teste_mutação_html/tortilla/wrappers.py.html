@@ -1,0 +1,892 @@
+<html><body><h1>tortilla\wrappers.py</h1>Killed 99 out of 180 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 40</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -15,7 +15,7 @@
+ 
+ try:
+     import OpenSSL
+-    ConnectionError = OpenSSL.SSL.SysCallError
++    ConnectionError = None
+ except ImportError:
+     ConnectionError = requests.exceptions.ConnectionError
+ 
+</pre><h3>Mutant 41</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -17,7 +17,7 @@
+     import OpenSSL
+     ConnectionError = OpenSSL.SSL.SysCallError
+ except ImportError:
+-    ConnectionError = requests.exceptions.ConnectionError
++    ConnectionError = None
+ 
+ 
+ #: Dictionary of colored debug messages used in the `~Client._log` method
+</pre><h3>Mutant 43</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -22,7 +22,7 @@
+ 
+ #: Dictionary of colored debug messages used in the `~Client._log` method
+ debug_messages = {
+-    'request': ''.join([
++    'request': 'XXXX'.join([
+         Fore.BLUE, 'Executing {method} request:\n',
+         Fore.BLACK, Style.BRIGHT,
+         '    URL:     {url}\n',
+</pre><h3>Mutant 44</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -23,7 +23,7 @@
+ #: Dictionary of colored debug messages used in the `~Client._log` method
+ debug_messages = {
+     'request': ''.join([
+-        Fore.BLUE, 'Executing {method} request:\n',
++        Fore.BLUE, 'XXExecuting {method} request:\nXX',
+         Fore.BLACK, Style.BRIGHT,
+         '    URL:     {url}\n',
+         '    headers: {headers}\n',
+</pre><h3>Mutant 45</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -25,7 +25,7 @@
+     'request': ''.join([
+         Fore.BLUE, 'Executing {method} request:\n',
+         Fore.BLACK, Style.BRIGHT,
+-        '    URL:     {url}\n',
++        'XX    URL:     {url}\nXX',
+         '    headers: {headers}\n',
+         '    query:   {params}\n',
+         '    data:    {data}\n',
+</pre><h3>Mutant 46</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -26,7 +26,7 @@
+         Fore.BLUE, 'Executing {method} request:\n',
+         Fore.BLACK, Style.BRIGHT,
+         '    URL:     {url}\n',
+-        '    headers: {headers}\n',
++        'XX    headers: {headers}\nXX',
+         '    query:   {params}\n',
+         '    data:    {data}\n',
+         Style.RESET_ALL
+</pre><h3>Mutant 47</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -27,7 +27,7 @@
+         Fore.BLACK, Style.BRIGHT,
+         '    URL:     {url}\n',
+         '    headers: {headers}\n',
+-        '    query:   {params}\n',
++        'XX    query:   {params}\nXX',
+         '    data:    {data}\n',
+         Style.RESET_ALL
+     ]),
+</pre><h3>Mutant 48</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -28,7 +28,7 @@
+         '    URL:     {url}\n',
+         '    headers: {headers}\n',
+         '    query:   {params}\n',
+-        '    data:    {data}\n',
++        'XX    data:    {data}\nXX',
+         Style.RESET_ALL
+     ]),
+     'success_response': ''.join([
+</pre><h3>Mutant 50</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -31,7 +31,7 @@
+         '    data:    {data}\n',
+         Style.RESET_ALL
+     ]),
+-    'success_response': ''.join([
++    'success_response': 'XXXX'.join([
+         Fore.GREEN, 'Got {status_code} {reason}:\n',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+</pre><h3>Mutant 51</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -32,7 +32,7 @@
+         Style.RESET_ALL
+     ]),
+     'success_response': ''.join([
+-        Fore.GREEN, 'Got {status_code} {reason}:\n',
++        Fore.GREEN, 'XXGot {status_code} {reason}:\nXX',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+         Style.RESET_ALL
+</pre><h3>Mutant 52</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -34,7 +34,7 @@
+     'success_response': ''.join([
+         Fore.GREEN, 'Got {status_code} {reason}:\n',
+         Fore.BLACK, Style.BRIGHT,
+-        '    {text}\n',
++        'XX    {text}\nXX',
+         Style.RESET_ALL
+     ]),
+     'failure_response': ''.join([
+</pre><h3>Mutant 55</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -38,7 +38,7 @@
+         Style.RESET_ALL
+     ]),
+     'failure_response': ''.join([
+-        Fore.RED, 'Got {status_code} {reason}:\n',
++        Fore.RED, 'XXGot {status_code} {reason}:\nXX',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+         Style.RESET_ALL
+</pre><h3>Mutant 56</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -40,7 +40,7 @@
+     'failure_response': ''.join([
+         Fore.RED, 'Got {status_code} {reason}:\n',
+         Fore.BLACK, Style.BRIGHT,
+-        '    {text}\n',
++        'XX    {text}\nXX',
+         Style.RESET_ALL
+     ]),
+     'cached_response': ''.join([
+</pre><h3>Mutant 58</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -43,7 +43,7 @@
+         '    {text}\n',
+         Style.RESET_ALL
+     ]),
+-    'cached_response': ''.join([
++    'cached_response': 'XXXX'.join([
+         Fore.CYAN, 'Cached response:\n',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+</pre><h3>Mutant 59</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -44,7 +44,7 @@
+         Style.RESET_ALL
+     ]),
+     'cached_response': ''.join([
+-        Fore.CYAN, 'Cached response:\n',
++        Fore.CYAN, 'XXCached response:\nXX',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+         Style.RESET_ALL
+</pre><h3>Mutant 60</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -46,7 +46,7 @@
+     'cached_response': ''.join([
+         Fore.CYAN, 'Cached response:\n',
+         Fore.BLACK, Style.BRIGHT,
+-        '    {text}\n',
++        'XX    {text}\nXX',
+         Style.RESET_ALL
+     ]),
+     'incorrect_format_response': ''.join([
+</pre><h3>Mutant 62</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -49,7 +49,7 @@
+         '    {text}\n',
+         Style.RESET_ALL
+     ]),
+-    'incorrect_format_response': ''.join([
++    'incorrect_format_response': 'XXXX'.join([
+         Fore.RED, 'Got {status_code} {reason} (not {format}):\n',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+</pre><h3>Mutant 63</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -50,7 +50,7 @@
+         Style.RESET_ALL
+     ]),
+     'incorrect_format_response': ''.join([
+-        Fore.RED, 'Got {status_code} {reason} (not {format}):\n',
++        Fore.RED, 'XXGot {status_code} {reason} (not {format}):\nXX',
+         Fore.BLACK, Style.BRIGHT,
+         '    {text}\n',
+         Style.RESET_ALL
+</pre><h3>Mutant 64</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -52,7 +52,7 @@
+     'incorrect_format_response': ''.join([
+         Fore.RED, 'Got {status_code} {reason} (not {format}):\n',
+         Fore.BLACK, Style.BRIGHT,
+-        '    {text}\n',
++        'XX    {text}\nXX',
+         Style.RESET_ALL
+     ])
+ }
+</pre><h3>Mutant 66</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -59,7 +59,7 @@
+ 
+ 
+ #: The maximum length of a response displayed in a debug message
+-DEBUG_MAX_TEXT_LENGTH = 100
++DEBUG_MAX_TEXT_LENGTH = 101
+ 
+ 
+ if os.name == 'nt' and run_from_ipython():
+</pre><h3>Mutant 68</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -62,7 +62,7 @@
+ DEBUG_MAX_TEXT_LENGTH = 100
+ 
+ 
+-if os.name == 'nt' and run_from_ipython():
++if os.name != 'nt' and run_from_ipython():
+     # IPython stops working properly when it loses control of
+     # `stdout` on Windows. In this case we won't enable Windows
+     # color support and we'll strip out all colors from the debug
+</pre><h3>Mutant 69</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -62,7 +62,7 @@
+ DEBUG_MAX_TEXT_LENGTH = 100
+ 
+ 
+-if os.name == 'nt' and run_from_ipython():
++if os.name == 'XXntXX' and run_from_ipython():
+     # IPython stops working properly when it loses control of
+     # `stdout` on Windows. In this case we won't enable Windows
+     # color support and we'll strip out all colors from the debug
+</pre><h3>Mutant 70</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -62,7 +62,7 @@
+ DEBUG_MAX_TEXT_LENGTH = 100
+ 
+ 
+-if os.name == 'nt' and run_from_ipython():
++if os.name == 'nt' or run_from_ipython():
+     # IPython stops working properly when it loses control of
+     # `stdout` on Windows. In this case we won't enable Windows
+     # color support and we'll strip out all colors from the debug
+</pre><h3>Mutant 71</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -67,7 +67,7 @@
+     # `stdout` on Windows. In this case we won't enable Windows
+     # color support and we'll strip out all colors from the debug
+     # messages.
+-    init_colorama(wrap=False)
++    init_colorama(wrap=True)
+ else:
+     init_colorama()
+ 
+</pre><h3>Mutant 72</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -75,7 +75,7 @@
+ class Client(object):
+     """Wrapper around the most basic methods of the requests library."""
+ 
+-    def __init__(self, debug=False, cache=None, **kwargs):
++    def __init__(self, debug=True, cache=None, **kwargs):
+         self.headers = Bunch()
+         self.debug = debug
+         self.cache = cache if cache else DictCache()
+</pre><h3>Mutant 74</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -77,7 +77,7 @@
+ 
+     def __init__(self, debug=False, cache=None, **kwargs):
+         self.headers = Bunch()
+-        self.debug = debug
++        self.debug = None
+         self.cache = cache if cache else DictCache()
+         self.cache = CacheWrapper(self.cache)
+         self.session = requests.session()
+</pre><h3>Mutant 80</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -93,7 +93,7 @@
+         :param kwargs: (optional) Arguments that will be passed
+             to the `str.format()` method
+         """
+-        display_log = self.debug
++        display_log = None
+         if debug is not None:
+             display_log = debug
+         if display_log:
+</pre><h3>Mutant 81</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -94,7 +94,7 @@
+             to the `str.format()` method
+         """
+         display_log = self.debug
+-        if debug is not None:
++        if debug is  None:
+             display_log = debug
+         if display_log:
+             print(message.format(**kwargs))
+</pre><h3>Mutant 82</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -95,7 +95,7 @@
+         """
+         display_log = self.debug
+         if debug is not None:
+-            display_log = debug
++            display_log = None
+         if display_log:
+             print(message.format(**kwargs))
+ 
+</pre><h3>Mutant 85</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -112,7 +112,7 @@
+     def request(self, method, url, path=(), extension=None, suffix=None,
+                 params=None, headers=None, data=None, debug=None,
+                 cache_lifetime=None, silent=None, ignore_cache=False,
+-                format='json', delay=0.0, formatter=None, **kwargs):
++                format='json', delay=1.0, formatter=None, **kwargs):
+         """Requests a URL and returns a *Bunched* response.
+ 
+         This method basically wraps the request method of the requests
+</pre><h3>Mutant 86</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -151,7 +151,7 @@
+             the `requests.request` method
+         :return: :class:`Bunch` object from JSON-parsed response
+         """
+-        if debug is None:
++        if debug is not None:
+             debug = self.debug
+ 
+         # build the request headers
+</pre><h3>Mutant 87</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -152,7 +152,7 @@
+         :return: :class:`Bunch` object from JSON-parsed response
+         """
+         if debug is None:
+-            debug = self.debug
++            debug = None
+ 
+         # build the request headers
+         request_headers = dict(self.headers.__dict__)
+</pre><h3>Mutant 89</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -156,7 +156,7 @@
+ 
+         # build the request headers
+         request_headers = dict(self.headers.__dict__)
+-        if headers is not None:
++        if headers is  None:
+             request_headers.update(headers)
+ 
+         # extract request_format and response_format from format arguments
+</pre><h3>Mutant 91</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -160,7 +160,7 @@
+             request_headers.update(headers)
+ 
+         # extract request_format and response_format from format arguments
+-        if type(format) in (list, tuple) and len(format) == 2:
++        if type(format) in (list, tuple) and len(format) != 2:
+             request_format, response_format = format
+         else:
+             request_format = response_format = format
+</pre><h3>Mutant 92</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -160,7 +160,7 @@
+             request_headers.update(headers)
+ 
+         # extract request_format and response_format from format arguments
+-        if type(format) in (list, tuple) and len(format) == 2:
++        if type(format) in (list, tuple) and len(format) == 3:
+             request_format, response_format = format
+         else:
+             request_format = response_format = format
+</pre><h3>Mutant 93</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -160,7 +160,7 @@
+             request_headers.update(headers)
+ 
+         # extract request_format and response_format from format arguments
+-        if type(format) in (list, tuple) and len(format) == 2:
++        if type(format) in (list, tuple) or len(format) == 2:
+             request_format, response_format = format
+         else:
+             request_format = response_format = format
+</pre><h3>Mutant 94</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -161,7 +161,7 @@
+ 
+         # extract request_format and response_format from format arguments
+         if type(format) in (list, tuple) and len(format) == 2:
+-            request_format, response_format = format
++            request_format, response_format = None
+         else:
+             request_format = response_format = format
+ 
+</pre><h3>Mutant 96</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -168,7 +168,7 @@
+         # add the 'Content-Type' header and compose data, only when:
+         #   1. the content is actually sent (whatever the HTTP verb is used)
+         #   2. the format is provided ('json' by default)
+-        if request_format and (data is not None):
++        if request_format and (data is  None):
+             request_headers.setdefault(
+                 'Content-Type', formats.meta(request_format).get('content_type'))
+             data = formats.compose(request_format, data)
+</pre><h3>Mutant 97</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -168,7 +168,7 @@
+         # add the 'Content-Type' header and compose data, only when:
+         #   1. the content is actually sent (whatever the HTTP verb is used)
+         #   2. the format is provided ('json' by default)
+-        if request_format and (data is not None):
++        if request_format or (data is not None):
+             request_headers.setdefault(
+                 'Content-Type', formats.meta(request_format).get('content_type'))
+             data = formats.compose(request_format, data)
+</pre><h3>Mutant 98</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -170,7 +170,7 @@
+         #   2. the format is provided ('json' by default)
+         if request_format and (data is not None):
+             request_headers.setdefault(
+-                'Content-Type', formats.meta(request_format).get('content_type'))
++                'XXContent-TypeXX', formats.meta(request_format).get('content_type'))
+             data = formats.compose(request_format, data)
+ 
+         # form the URL
+</pre><h3>Mutant 99</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -170,7 +170,7 @@
+         #   2. the format is provided ('json' by default)
+         if request_format and (data is not None):
+             request_headers.setdefault(
+-                'Content-Type', formats.meta(request_format).get('content_type'))
++                'Content-Type', formats.meta(request_format).get('XXcontent_typeXX'))
+             data = formats.compose(request_format, data)
+ 
+         # form the URL
+</pre><h3>Mutant 100</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -171,7 +171,7 @@
+         if request_format and (data is not None):
+             request_headers.setdefault(
+                 'Content-Type', formats.meta(request_format).get('content_type'))
+-            data = formats.compose(request_format, data)
++            data = None
+ 
+         # form the URL
+         if not hasattr(path, "encode"):
+</pre><h3>Mutant 102</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -174,7 +174,7 @@
+             data = formats.compose(request_format, data)
+ 
+         # form the URL
+-        if not hasattr(path, "encode"):
++        if not hasattr(path, "XXencodeXX"):
+             path = '/'.join(path)
+         if extension is None:
+             extension = ''
+</pre><h3>Mutant 103</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -175,7 +175,7 @@
+ 
+         # form the URL
+         if not hasattr(path, "encode"):
+-            path = '/'.join(path)
++            path = 'XX/XX'.join(path)
+         if extension is None:
+             extension = ''
+         elif not extension.startswith('.'):
+</pre><h3>Mutant 120</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -189,7 +189,7 @@
+                   url=url, headers=request_headers, params=params, data=data)
+ 
+         # check if the response for this request is cached
+-        cache_key = (url, str(params), str(headers))
++        cache_key = None
+         if self.cache.has(cache_key) and not ignore_cache:
+             item = self.cache.get(cache_key)
+             self._log(debug_messages['cached_response'], debug, text=item)
+</pre><h3>Mutant 125</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -196,7 +196,7 @@
+             return bunchify(item)
+ 
+         # delay the request if needed
+-        if delay > 0:
++        if delay >= 0:
+             t = time.time()
+             if self._last_request_time is None:
+                 self._last_request_time = t
+</pre><h3>Mutant 132</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -202,7 +202,7 @@
+                 self._last_request_time = t
+ 
+             elapsed = t - self._last_request_time
+-            if elapsed < delay:
++            if elapsed <= delay:
+                 time.sleep(delay - elapsed)
+ 
+         # use default request parameters
+</pre><h3>Mutant 133</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -203,7 +203,7 @@
+ 
+             elapsed = t - self._last_request_time
+             if elapsed < delay:
+-                time.sleep(delay - elapsed)
++                time.sleep(delay + elapsed)
+ 
+         # use default request parameters
+         for name, value in self.defaults.items():
+</pre><h3>Mutant 135</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -212,7 +212,7 @@
+         # execute the request
+         r = self.send_request(method, url, params=params,
+                               headers=request_headers, data=data, **kwargs)
+-        self._last_request_time = time.time()
++        self._last_request_time = None
+ 
+         # when not silent, raise an exception for any HTTP status code >= 400
+         if not silent:
+</pre><h3>Mutant 138</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -220,7 +220,7 @@
+ 
+         try:
+             # parse the response into something nice
+-            has_body = len(r.text) > 0
++            has_body = len(r.text) > 1
+             if not has_body:
+                 # TODO: This is set 'No response' for the debug message.
+                 #       Extract this into a different variable so that
+</pre><h3>Mutant 141</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -225,7 +225,7 @@
+                 # TODO: This is set 'No response' for the debug message.
+                 #       Extract this into a different variable so that
+                 #       `parsed_response` is not ambiguous.
+-                parsed_response = 'No response'
++                parsed_response = 'XXNo responseXX'
+             else:
+                 parsed_response = formats.parse(response_format, r.text)
+         except ValueError as e:
+</pre><h3>Mutant 142</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -225,7 +225,7 @@
+                 # TODO: This is set 'No response' for the debug message.
+                 #       Extract this into a different variable so that
+                 #       `parsed_response` is not ambiguous.
+-                parsed_response = 'No response'
++                parsed_response = None
+             else:
+                 parsed_response = formats.parse(response_format, r.text)
+         except ValueError as e:
+</pre><h3>Mutant 144</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -230,7 +230,7 @@
+                 parsed_response = formats.parse(response_format, r.text)
+         except ValueError as e:
+             # we've failed, raise this stuff when not silent
+-            if len(r.text) > DEBUG_MAX_TEXT_LENGTH:
++            if len(r.text) >= DEBUG_MAX_TEXT_LENGTH:
+                 text = r.text[:DEBUG_MAX_TEXT_LENGTH] + '...'
+             else:
+                 text = r.text
+</pre><h3>Mutant 145</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -231,7 +231,7 @@
+         except ValueError as e:
+             # we've failed, raise this stuff when not silent
+             if len(r.text) > DEBUG_MAX_TEXT_LENGTH:
+-                text = r.text[:DEBUG_MAX_TEXT_LENGTH] + '...'
++                text = r.text[:DEBUG_MAX_TEXT_LENGTH] - '...'
+             else:
+                 text = r.text
+             self._log(debug_messages['incorrect_format_response'], debug,
+</pre><h3>Mutant 146</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -231,7 +231,7 @@
+         except ValueError as e:
+             # we've failed, raise this stuff when not silent
+             if len(r.text) > DEBUG_MAX_TEXT_LENGTH:
+-                text = r.text[:DEBUG_MAX_TEXT_LENGTH] + '...'
++                text = r.text[:DEBUG_MAX_TEXT_LENGTH] + 'XX...XX'
+             else:
+                 text = r.text
+             self._log(debug_messages['incorrect_format_response'], debug,
+</pre><h3>Mutant 147</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -231,7 +231,7 @@
+         except ValueError as e:
+             # we've failed, raise this stuff when not silent
+             if len(r.text) > DEBUG_MAX_TEXT_LENGTH:
+-                text = r.text[:DEBUG_MAX_TEXT_LENGTH] + '...'
++                text = None
+             else:
+                 text = r.text
+             self._log(debug_messages['incorrect_format_response'], debug,
+</pre><h3>Mutant 148</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -233,7 +233,7 @@
+             if len(r.text) > DEBUG_MAX_TEXT_LENGTH:
+                 text = r.text[:DEBUG_MAX_TEXT_LENGTH] + '...'
+             else:
+-                text = r.text
++                text = None
+             self._log(debug_messages['incorrect_format_response'], debug,
+                       format=response_format, status_code=r.status_code,
+                       reason=r.reason, text=text)
+</pre><h3>Mutant 150</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -243,7 +243,7 @@
+ 
+         # cache the response if required
+         # only GET requests are cached
+-        if cache_lifetime and cache_lifetime > 0 and method.lower() == 'get':
++        if cache_lifetime and cache_lifetime >= 0 and method.lower() == 'get':
+             self.cache.set(cache_key, parsed_response, cache_lifetime)
+ 
+         # print out a final debug message about the response of the request
+</pre><h3>Mutant 156</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -247,7 +247,7 @@
+             self.cache.set(cache_key, parsed_response, cache_lifetime)
+ 
+         # print out a final debug message about the response of the request
+-        debug_message = 'success_response' if r.status_code == 200 else \
++        debug_message = 'success_response' if r.status_code != 200 else \
+             'failure_response'
+         self._log(debug_messages[debug_message], debug,
+                   status_code=r.status_code, reason=r.reason,
+</pre><h3>Mutant 157</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -247,7 +247,7 @@
+             self.cache.set(cache_key, parsed_response, cache_lifetime)
+ 
+         # print out a final debug message about the response of the request
+-        debug_message = 'success_response' if r.status_code == 200 else \
++        debug_message = 'success_response' if r.status_code == 201 else \
+             'failure_response'
+         self._log(debug_messages[debug_message], debug,
+                   status_code=r.status_code, reason=r.reason,
+</pre><h3>Mutant 164</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -275,7 +275,7 @@
+                  extension=None, suffix=None, format=None, cache=None,
+                  delay=None, hyphenate=False, mixedcase=False, camelcase=False,
+                  formatter=None, **kwargs):
+-        if not hasattr(part, "encode"):
++        if not hasattr(part, "XXencodeXX"):
+             part = str(part)
+         self._part = part[:-1] if part[-1:] == '/' else part
+         self._url = None
+</pre><h3>Mutant 166</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -277,7 +277,7 @@
+                  formatter=None, **kwargs):
+         if not hasattr(part, "encode"):
+             part = str(part)
+-        self._part = part[:-1] if part[-1:] == '/' else part
++        self._part = part[:+1] if part[-1:] == '/' else part
+         self._url = None
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+</pre><h3>Mutant 167</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -277,7 +277,7 @@
+                  formatter=None, **kwargs):
+         if not hasattr(part, "encode"):
+             part = str(part)
+-        self._part = part[:-1] if part[-1:] == '/' else part
++        self._part = part[:-2] if part[-1:] == '/' else part
+         self._url = None
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+</pre><h3>Mutant 168</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -277,7 +277,7 @@
+                  formatter=None, **kwargs):
+         if not hasattr(part, "encode"):
+             part = str(part)
+-        self._part = part[:-1] if part[-1:] == '/' else part
++        self._part = part[:-1] if part[+1:] == '/' else part
+         self._url = None
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+</pre><h3>Mutant 169</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -277,7 +277,7 @@
+                  formatter=None, **kwargs):
+         if not hasattr(part, "encode"):
+             part = str(part)
+-        self._part = part[:-1] if part[-1:] == '/' else part
++        self._part = part[:-1] if part[-2:] == '/' else part
+         self._url = None
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+</pre><h3>Mutant 171</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -277,7 +277,7 @@
+                  formatter=None, **kwargs):
+         if not hasattr(part, "encode"):
+             part = str(part)
+-        self._part = part[:-1] if part[-1:] == '/' else part
++        self._part = part[:-1] if part[-1:] == 'XX/XX' else part
+         self._url = None
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+</pre><h3>Mutant 173</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -278,7 +278,7 @@
+         if not hasattr(part, "encode"):
+             part = str(part)
+         self._part = part[:-1] if part[-1:] == '/' else part
+-        self._url = None
++        self._url = ""
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+         if formatter is None:
+</pre><h3>Mutant 176</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -281,7 +281,7 @@
+         self._url = None
+         self._parent = parent or Client(debug=debug, cache=cache, **kwargs)
+ 
+-        if formatter is None:
++        if formatter is not None:
+             if hyphenate:
+                 formatter = formatters.hyphenate
+             elif mixedcase:
+</pre><h3>Mutant 177</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -283,7 +283,7 @@
+ 
+         if formatter is None:
+             if hyphenate:
+-                formatter = formatters.hyphenate
++                formatter = None
+             elif mixedcase:
+                 formatter = formatters.mixedcase
+             elif camelcase:
+</pre><h3>Mutant 178</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -285,7 +285,7 @@
+             if hyphenate:
+                 formatter = formatters.hyphenate
+             elif mixedcase:
+-                formatter = formatters.mixedcase
++                formatter = None
+             elif camelcase:
+                 formatter = formatters.camelcase
+ 
+</pre><h3>Mutant 179</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -287,7 +287,7 @@
+             elif mixedcase:
+                 formatter = formatters.mixedcase
+             elif camelcase:
+-                formatter = formatters.camelcase
++                formatter = None
+ 
+         self.config = Bunch({
+             'headers': bunchify(headers) if headers else Bunch(),
+</pre><h3>Mutant 182</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -292,7 +292,7 @@
+         self.config = Bunch({
+             'headers': bunchify(headers) if headers else Bunch(),
+             'params': bunchify(params) if params else Bunch(),
+-            'debug': debug,
++            'XXdebugXX': debug,
+             'cache_lifetime': cache_lifetime,
+             'silent': silent,
+             'extension': extension,
+</pre><h3>Mutant 183</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -293,7 +293,7 @@
+             'headers': bunchify(headers) if headers else Bunch(),
+             'params': bunchify(params) if params else Bunch(),
+             'debug': debug,
+-            'cache_lifetime': cache_lifetime,
++            'XXcache_lifetimeXX': cache_lifetime,
+             'silent': silent,
+             'extension': extension,
+             'suffix': suffix,
+</pre><h3>Mutant 184</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -294,7 +294,7 @@
+             'params': bunchify(params) if params else Bunch(),
+             'debug': debug,
+             'cache_lifetime': cache_lifetime,
+-            'silent': silent,
++            'XXsilentXX': silent,
+             'extension': extension,
+             'suffix': suffix,
+             'format': format,
+</pre><h3>Mutant 185</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -295,7 +295,7 @@
+             'debug': debug,
+             'cache_lifetime': cache_lifetime,
+             'silent': silent,
+-            'extension': extension,
++            'XXextensionXX': extension,
+             'suffix': suffix,
+             'format': format,
+             'delay': delay,
+</pre><h3>Mutant 186</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -296,7 +296,7 @@
+             'cache_lifetime': cache_lifetime,
+             'silent': silent,
+             'extension': extension,
+-            'suffix': suffix,
++            'XXsuffixXX': suffix,
+             'format': format,
+             'delay': delay,
+             'formatter': formatter,
+</pre><h3>Mutant 187</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -297,7 +297,7 @@
+             'silent': silent,
+             'extension': extension,
+             'suffix': suffix,
+-            'format': format,
++            'XXformatXX': format,
+             'delay': delay,
+             'formatter': formatter,
+         })
+</pre><h3>Mutant 188</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -298,7 +298,7 @@
+             'extension': extension,
+             'suffix': suffix,
+             'format': format,
+-            'delay': delay,
++            'XXdelayXX': delay,
+             'formatter': formatter,
+         })
+         self._children = {}
+</pre><h3>Mutant 202</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -361,7 +361,7 @@
+             self._children[name] = self.__class__(
+                 part=name,
+                 parent=self,
+-                debug=self.config.get('debug'),
++                debug=self.config.get('XXdebugXX'),
+             )
+         return self._children[name]
+ 
+</pre><h3>Mutant 211</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -392,7 +392,7 @@
+                 if value is not None:
+                     if isinstance(value, dict):
+                         # prevents overwriting default values in dicts
+-                        copy = value.copy()
++                        copy = None
+                         if options.get(key):
+                             copy.update(options[key])
+                         options[key] = copy
+</pre><h3>Mutant 212</h3><pre>--- tortilla\wrappers.py
++++ tortilla\wrappers.py
+@@ -395,7 +395,7 @@
+                         copy = value.copy()
+                         if options.get(key):
+                             copy.update(options[key])
+-                        options[key] = copy
++                        options[key] = None
+                     else:
+                         options.setdefault(key, value)
+ 
+</pre></body></html>
